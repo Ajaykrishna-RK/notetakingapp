@@ -10,7 +10,7 @@ function Home() {
   const { allTodos } = useSelector((state) => state.Todos);
   const { userName, checkAuthLoading } = useSelector((state) => state.login);
   
-
+console.log(userName,"user")
 
   const dispatch = useDispatch();
   const navigate = useNavigate()
@@ -19,7 +19,7 @@ function Home() {
     dispatch(fetchAllTodos());
   }, []);
 
-  console.log(allTodos, checkAuthLoading, "==");
+  console.log(allTodos,"alltodos");
 
 
  
@@ -33,7 +33,7 @@ function Home() {
   return (
     <div>
       <div className="mt-5 text-center items-center justify-center ">
-        <h1 className="text-6xl text-white">HI,UserName</h1>
+        <h1 className="text-6xl text-white">HI,{userName}</h1>
       </div>
 
       <div className="justify-end items-end mt-6 flex mr-5">

@@ -19,6 +19,7 @@ app.use(cookieparser())
 
 app.post("/signup",signUpUser);
 app.post("/login",loginUser)  
+
 app.get("/checkauth",requireAuth,checkAuth)
 app.get("/logout",requireAuth,logout )
 app.get("/todos",requireAuth,getTodos);
@@ -26,5 +27,7 @@ app.get("/todos/:id",requireAuth,getById)
 app.post("/todos",requireAuth,PostTodos),
 app.put("/todos/:id",requireAuth,updateTodo)
 app.delete("/todos/:id",requireAuth,deleteTodo)
+
+
 
 app.listen(process.env.PORT);
