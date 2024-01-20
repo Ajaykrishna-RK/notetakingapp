@@ -4,7 +4,7 @@ const Todo = require("../model/TodoModel");
 
 const getTodos = async (req, res) => {
  try{
-    const todos = await Todo.find()
+    const todos = await Todo.find({user:req.user._id})
 return res.json(todos)
  }catch(err){
     console.log(err)
